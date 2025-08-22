@@ -1,4 +1,4 @@
-// pages/CartPage.jsx
+
 import { useCart } from '../context/CartContext';
 import { Api } from '../services/api';
 import { useState, useEffect } from 'react';
@@ -64,7 +64,15 @@ export default function CartPage() {
     }
   }, [items]);
 
-  if (items.length === 0) return <p style={{ padding: 24 }}>Seu carrinho está vazio.</p>;
+  if (items.length === 0) return  <main className="main-content">
+                    <h1 className="page-title">Carrinho</h1>
+                    <div className="empty-cart">
+                        <div className="empty-cart-icon">🛒</div>
+                        <h2>Seu carrinho está vazio</h2>
+                        <p>Parece que você ainda não adicionou nenhum produto ao seu carrinho. Explore nossos produtos tech e encontre itens incríveis para desenvolvedores!</p>
+                        <a href="/" className="btn">Ver Produtos</a>
+                    </div>
+                </main>
 
   return (
     <div style={{ padding: 24, maxWidth: 800, margin: '0 auto' }}>
@@ -156,14 +164,14 @@ export default function CartPage() {
         borderRadius: 8,
         marginBottom: 24
       }}>
-        <h3 style={{ marginTop: 0 }}>Resumo do Pedido</h3>
+        <h3 style={{ marginTop: 0, color: 'black' }}>Resumo do Pedido</h3>
         
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, color: 'black' }}>
           <span>Subtotal:</span>
           <span>R$ {total.toFixed(2)}</span>
         </div>
         
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, color: 'black' }}>
           <span>Frete:</span>
           <span>
             {selectedShipping 
@@ -174,7 +182,7 @@ export default function CartPage() {
         
         <hr style={{ margin: '16px 0', border: 'none', borderTop: '1px solid #ddd' }} />
         
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', fontSize: '1.1em' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', fontSize: '1.1em', color: 'black' }}>
           <span>Total:</span>
           <span>R$ {grandTotal.toFixed(2)}</span>
         </div>

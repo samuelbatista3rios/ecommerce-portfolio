@@ -63,10 +63,10 @@ const ShippingCalculator = ({ onSelectShipping, onLoadingChange }) => {
       background: '#f7fafc',
       marginBottom: '20px'
     }}>
-      <h3 style={{ marginTop: 0, marginBottom: '15px' }}>Calcular Frete</h3>
+      <h3 style={{ marginTop: 0, marginBottom: '15px', color: 'black' }}>Calcular Frete</h3>
       
       <div style={{ marginBottom: '15px' }}>
-        <label htmlFor="cep" style={{ display: 'block', marginBottom: '5px', fontWeight: '500' }}>
+        <label htmlFor="cep" style={{ display: 'block', marginBottom: '5px', fontWeight: '500', color: 'black' }}>
           Digite seu CEP:
         </label>
         <input

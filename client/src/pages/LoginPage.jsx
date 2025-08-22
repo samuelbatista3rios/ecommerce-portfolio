@@ -40,12 +40,12 @@ export default function LoginPage() {
         width: '100%',
         maxWidth: '400px',
         padding: '30px',
-        border: '1px solid #e2e8f0',
+        border: '1px solid #141414',
         borderRadius: '8px',
         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
         background: 'white'
       }}>
-        <h2 style={{ textAlign: 'center', marginBottom: '24px' }}>
+        <h2 style={{ textAlign: 'center', marginBottom: '24px', color:'#141414' }}>
           Entrar na Minha Conta
         </h2>
         
@@ -64,7 +64,7 @@ export default function LoginPage() {
         
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: '16px' }}>
-            <label htmlFor="username" style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
+            <label htmlFor="username" style={{ display: 'block', marginBottom: '8px', fontWeight: '500', color:'#141414' }}>
               Nome de usuário:
             </label>
             <input
@@ -76,7 +76,7 @@ export default function LoginPage() {
               style={{
                 width: '100%',
                 padding: '12px',
-                border: '1px solid #cbd5e0',
+                border: '1px solid #141414',  
                 borderRadius: '6px',
                 fontSize: '16px'
               }}
@@ -84,7 +84,7 @@ export default function LoginPage() {
           </div>
           
           <div style={{ marginBottom: '24px' }}>
-            <label htmlFor="password" style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
+            <label htmlFor="password" style={{ display: 'block', marginBottom: '8px', fontWeight: '500',color:'#141414' }}>
               Senha:
             </label>
             <input

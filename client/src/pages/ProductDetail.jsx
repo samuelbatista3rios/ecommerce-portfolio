@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Api } from '../services/api';
 import { useCart } from '../context/CartContext';
-import ShippingCalculator from '../components/ShippingCalculator'; // import do componente de frete
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -13,7 +12,6 @@ export default function ProductDetail() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   // eslint-disable-next-line no-unused-vars
-  const [selectedShipping, setSelectedShipping] = useState(null); // estado do frete
 
   useEffect(() => {
     setLoading(true);

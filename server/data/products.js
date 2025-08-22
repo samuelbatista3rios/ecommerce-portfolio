@@ -45,7 +45,7 @@ export default [
     name: "Mouse Gamer Sem Fio",
     price: 219.9,
     image:
-      "https://images.unsplash.com/photo-1599669454699-248893623464?w=1000",
+      "https://melhormouse.com.br/galeria/1665846096-os-12-melhores-mouses-gamers-sem-fio-de-2022.jpg",
     description:
       "Mouse gamer com sensor de 16000 DPI, 6 botões programáveis e bateria de longa duração.",
     stock: 18,

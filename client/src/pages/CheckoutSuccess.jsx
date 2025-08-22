@@ -13,7 +13,7 @@ export default function CheckoutSuccess() {
       <h2>Compra aprovada 🎉</h2>
       <p>Pedido <strong>{orderId}</strong> finalizado com sucesso!</p>
       <p>Valor total: <strong>R$ {Number(total || 0).toFixed(2)}</strong></p>
-      <Link to="/" style={{ marginTop: 16, display: 'inline-block', textDecoration: 'underline' }}>
+      <Link to="/" style={{ marginTop: 16, display: 'inline-block', textDecoration: 'underline', color: 'white' }}>
         Voltar ao catálogo
       </Link>
     </div>

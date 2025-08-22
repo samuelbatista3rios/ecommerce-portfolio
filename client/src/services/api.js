@@ -4,16 +4,16 @@ const API_BASE = import.meta.env.VITE_API_BASE || "";
 async function http(path, options) {
   const token = localStorage.getItem("authToken");
   const headers = { "Content-Type": "application/json" };
-  
+
   if (token) {
     headers["Authorization"] = token;
   }
-  
+
   const res = await fetch(`${API_BASE}${path}`, {
     headers,
     ...options,
   });
-  
+
   if (res.status === 401 || res.status === 403) {
     // Token inválido ou expirado
     localStorage.removeItem("authToken");
@@ -21,7 +21,7 @@ async function http(path, options) {
     window.location.href = "/login";
     throw new Error("Não autorizado");
   }
-  
+
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.json();
 }
@@ -39,6 +39,8 @@ export const Api = {
       method: "POST",
       body: JSON.stringify(credentials),
     }),
+  getOrders: () => http("/api/orders"),
+  getOrder: (orderId) => http(`/api/orders/${orderId}`),
   getProfile: () => http("/api/me"),
   checkout: (payload) =>
     http("/api/checkout", {
