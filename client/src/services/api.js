@@ -1,12 +1,13 @@
 // services/api.js
-const API_BASE = import.meta.env.VITE_API_BASE || "";
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:3000"; 
+// no dev local, usa localhost; em produção, usa a URL do backend via VITE_API_BASE
 
-async function http(path, options) {
+async function http(path, options = {}) {
   const token = localStorage.getItem("authToken");
   const headers = { "Content-Type": "application/json" };
 
   if (token) {
-    headers["Authorization"] = token;
+    headers["Authorization"] = `Bearer ${token}`; // adiciona Bearer se estiver usando JWT
   }
 
   const res = await fetch(`${API_BASE}${path}`, {
@@ -22,7 +23,11 @@ async function http(path, options) {
     throw new Error("Não autorizado");
   }
 
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  if (!res.ok) {
+    const errorText = await res.text();
+    throw new Error(`HTTP ${res.status}: ${errorText}`);
+  }
+
   return res.json();
 }
 
